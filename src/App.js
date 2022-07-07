@@ -1,6 +1,4 @@
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-
-const COLORS = ['#EB8EED', '#00BDF3', '#FDCC4A', '#6673E5', '#FE8856'];
+import { PieChart, Pie, Tooltip, Legend } from 'recharts';
 
 const data = [
   { name: 'Taxable Investments', value: 10, unit: '%', fill: '#00BDF3' },
