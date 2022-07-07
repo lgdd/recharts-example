@@ -23,7 +23,7 @@ function App() {
       <Legend
         layout="vertical"
         verticalAlign="middle"
-        wrapperStyle={{ left: '250px' }}
+        wrapperStyle={{ left: '250px', top: '40px' }}
         iconType={'circle'}
         iconSize={8}
         formatter={renderLegend}
