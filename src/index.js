@@ -3,32 +3,21 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const ELEMENT_ID = 'pillar-ap-charts';
 
-class PillarAPCharts extends HTMLElement {
+class WebComponent extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = '<div id="pillarAPCharts"></div>';
-
-    const props = {
-      siteId: this.getAttribute('siteId'),
-    };
-
     ReactDOM.render(
-      <App {...props} />,
-      document.querySelector('#pillarAPCharts')
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>,
+      this
     );
   }
 }
 
-if (customElements.get('pillar-ap-charts')) {
-  console.log('Skipping registration for <blog-editor> (already registered)');
-} else {
-  customElements.define('pillar-ap-charts', PillarAPCharts);
+if (!customElements.get(ELEMENT_ID)) {
+  customElements.define(ELEMENT_ID, WebComponent);
 }
 
 // If you want to start measuring performance in your app, pass a function

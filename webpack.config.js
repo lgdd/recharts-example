@@ -12,7 +12,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: path.resolve(__dirname, 'src/index.js'),
   plugins: [
     new CleanWebpackPlugin(),
@@ -40,12 +40,12 @@ module.exports = {
     filename: 'bundle.js',
     path: outputPath,
   },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new ESBuildMinifyPlugin({
-        target: 'es2015',
-      }),
-    ],
-  },
+  // optimization: {
+  //   minimize: true,
+  //   minimizer: [
+  //     new ESBuildMinifyPlugin({
+  //       target: 'es2015',
+  //     }),
+  //   ],
+  // },
 };
