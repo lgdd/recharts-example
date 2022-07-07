@@ -39,8 +39,8 @@ function App() {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
       <PieChart
-        style={{ background: 'var(--white, #fff)' }}
-        width={500}
+        style={{ background: 'var(--white, #fff)', marginRight: '1.5rem' }}
+        width={480}
         height={200}
       >
         <Tooltip />
