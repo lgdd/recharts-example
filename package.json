@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "serve": "serve -s dist",
     "build": "webpack --config webpack.prod.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,6 +42,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "esbuild-loader": "^2.19.0",
     "html-webpack-plugin": "^5.5.0",
+    "serve": "^13.0.4",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
     "webpack-merge": "^5.8.0"
