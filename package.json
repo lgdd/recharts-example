@@ -15,8 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "serve": "serve -s dist",
-    "build": "webpack --config webpack.prod.js",
+    "serve": "yarn build && serve -s dist",
+    "build": "webpack --config webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

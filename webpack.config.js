@@ -2,6 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ProvidePlugin } = require('webpack');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 const outputPath = path.resolve(__dirname, 'dist');
 
@@ -11,6 +12,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
+  mode: 'production',
   entry: path.resolve(__dirname, 'src/index.js'),
   plugins: [
     new CleanWebpackPlugin(),
@@ -35,7 +37,15 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   output: {
-    filename: '[name].js',
+    filename: 'bundle.js',
     path: outputPath,
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new ESBuildMinifyPlugin({
+        target: 'es2015',
+      }),
+    ],
   },
 };
