@@ -16,14 +16,14 @@ function App() {
   return (
     <PieChart
       style={{ background: 'var(--white, #fff)' }}
-      width={400}
+      width={500}
       height={200}
     >
       <Tooltip />
       <Legend
         layout="vertical"
         verticalAlign="middle"
-        wrapperStyle={{ marginLeft: '100px' }}
+        wrapperStyle={{ left: '250px' }}
         iconType={'circle'}
         iconSize={8}
         formatter={renderLegend}
