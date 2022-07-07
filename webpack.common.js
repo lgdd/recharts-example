@@ -4,9 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const outputPath = path.resolve(__dirname, 'dist');
 
+const htmlPlugin = new HtmlWebpackPlugin({
+  template: './public/index.html',
+  filename: './index.html',
+});
+
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.js'),
-  plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin()],
+  plugins: [new CleanWebpackPlugin(), htmlPlugin],
   module: {
     rules: [
       {
