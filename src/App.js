@@ -1,4 +1,4 @@
-import { PieChart, Pie, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie, Tooltip, Legend, Label } from 'recharts';
 
 const data0 = [
   { name: 'Taxable Investments', value: 10, unit: '%', fill: '#00BDF3' },
@@ -21,14 +21,14 @@ const renderGoalLegend = (value, entry, index) => {
   if (value === 'Goal') {
     return (
       <span style={{ color: 'var(--dark, #000)' }}>
-        {value}: <b>$185M</b>
+        {value}: <span style={{ fontWeight: 900 }}>$185M</span>
       </span>
     );
   }
   if (value === 'Stretch Goal') {
     return (
       <span style={{ color: 'var(--dark, #000)' }}>
-        {value}: <b>$200M</b>
+        {value}: <span style={{ fontWeight: 900 }}>$200M</span>
       </span>
     );
   }
@@ -59,7 +59,9 @@ function App() {
           outerRadius={80}
           fill="#8884d8"
           dataKey="value"
-        />
+        >
+          <Label value="Total UAM" position="center" />
+        </Pie>
       </PieChart>
       <PieChart
         style={{ background: 'var(--white, #fff)' }}
@@ -82,7 +84,9 @@ function App() {
           outerRadius={80}
           fill="#8884d8"
           dataKey="value"
-        />
+        >
+          <Label value="Year-End Goals" position="center" />
+        </Pie>
       </PieChart>
     </div>
   );
