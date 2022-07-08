@@ -2,7 +2,6 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ProvidePlugin } = require('webpack');
-const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 const outputPath = path.resolve(__dirname, 'dist');
 
@@ -40,12 +39,4 @@ module.exports = {
     filename: 'bundle.js',
     path: outputPath,
   },
-  // optimization: {
-  //   minimize: true,
-  //   minimizer: [
-  //     new ESBuildMinifyPlugin({
-  //       target: 'es2015',
-  //     }),
-  //   ],
-  // },
 };
