@@ -60,7 +60,7 @@ function App() {
           fill="#8884d8"
           dataKey="value"
         >
-          <Label value="Total UAM" position="center" />
+          <Label value="Total AUM" position="center" />
         </Pie>
       </PieChart>
       <PieChart
